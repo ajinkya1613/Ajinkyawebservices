@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajinkya Web Services</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* ================= HEADER / NAVBAR ================= */
+header.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  padding: 15px 30px;
+  background: rgba(0,0,0,0.95);
+}
+
+header.navbar .logo {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+header.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+header.navbar nav a,
+header.navbar .dropdown-btn {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+header.navbar nav a:hover,
+header.navbar .dropdown-btn:hover {
+  color: #dddddd;
+}
+
+/* ================= MEGA MENU ================= */
+.nav-dropdown {
+  position: relative;
+}
+.nav-dropdown .dropdown-btn {
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+.nav-dropdown .dropdown-btn .arrow {
+  margin-left: 5px;
+  transition: transform 0.3s;
+}
+.nav-dropdown .mega-menu-left {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  flex-direction: column;
+  min-width: 220px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+.nav-dropdown .mega-menu-left a {
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  font-weight: bold;
+  color: #000 !important;
+  text-decoration: none;
+  gap: 8px;
+  transition: 0.2s;
+}
+.nav-dropdown .mega-menu-left a:hover {
+  background: #f0f0f0;
+  border-radius: 5px;
+}
+.nav-dropdown:hover .mega-menu-left {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= HERO ================= */
+.hero {
+  background: linear-gradient(135deg, #000000, #1f2933, #111827);
+  color: #fff;
+  padding: 120px 20px 80px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+.hero h2, .hero p, .hero .button { opacity: 0; transform: translateY(40px);}
+.hero h2 { animation: slideUp 1s ease forwards; }
+.hero p  { animation: slideUp 1.3s ease forwards; }
+.hero .button { animation: slideUp 1.6s ease forwards; }
+@keyframes slideUp { from { transform: translateY(40px); opacity: 0;} to { transform: translateY(0); opacity: 1;}}
+
+/* ================= BUTTON ================= */
+.button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  background: #fff;
+  color: #000;
+  font-weight: bold;
+  border-radius: 40px;
+  text-decoration: none;
+  transition: all 0.35s ease;
+}
+.button:hover {
+  background: #000;
+  color: #fff;
+  transform: scale(1.08);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.5);
+}
+
+/* ================= SERVICES GRID ================= */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 20px;
+  padding: 30px 20px;
+}
+
+/* ================= CARDS ================= */
+.card {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card h3 { margin-bottom: 12px; color:#111827; display:flex; justify-content:center; align-items:center; gap:10px;}
+.card p { margin-bottom:0; color:#333;}
+.card i { font-size:28px; color:#2563eb; margin-bottom:12px; transition: transform 0.3s;}
+.card:hover { transform: translateY(-6px); box-shadow:0 10px 25px rgba(0,0,0,0.15);}
+.card:hover i { transform: scale(1.2); color:#1d4ed8; }
+
+/* ================= ABOUT US STYLES ================= */
+.about-section { padding: 50px 20px; background:#f7f8fa;}
+.about-section h2 { text-align:center; margin-bottom:40px;}
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 25px;
+}
+.about-card {
+  background: #fff;
+  padding: 25px 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: left;
+}
+.about-card:hover { transform: translateY(-6px); box-shadow:0 12px 30px rgba(0,0,0,0.12);}
+.about-card h3 { margin-bottom:15px; color:#111827; display:flex; align-items:center; gap:10px;}
+.about-card p, .about-card ul { margin:0; padding-left:15px; color:#555;}
+.about-card ul li { margin-bottom:8px;}
+
+/* ================= BACK BUTTON ================= */
+.back-btn { position: fixed; top:90px; left:20px; background:#000; color:#fff; border:none; padding:10px 18px; border-radius:30px; cursor:pointer; z-index:2000; transition: transform 0.3s;}
+.back-btn:hover { transform: scale(1.1);}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+  header.navbar nav { flex-direction: column; gap:15px;}
+  .nav-dropdown .mega-menu-left { position: relative; top:0; left:0; transform:translateY(0);}
+  .about-grid { grid-template-columns:1fr;}
+}
+</style>
+</head>
+
+<body>
+
+<button class="back-btn" onclick="history.back()">← Back</button>
+
+<header class="navbar">
+  <h1 class="logo">Ajinkya Web Services</h1>
+  <nav>
+    <a href="index.html">Home</a>
+
+    <div class="nav-dropdown">
+      <a class="dropdown-btn">Services ▾</a>
+      <div class="mega-menu-left">
+        <a href="personal.html">🖥️ Personal Websites</a>
+        <a href="business.html">🏢 Business Websites</a>
+        <a href="ecommerce.html">🛒 E-commerce Websites</a>
+        <a href="landing.html">📄 Landing Pages</a>
+        <a href="custom.html">⚙️ Custom Websites</a>
+        <a href="redesign.html">🔄 Website Redesign</a>
+      </div>
+    </div>
+
+    <div class="nav-dropdown">
+      <a class="dropdown-btn">Privacy ▾</a>
+      <div class="mega-menu-left">
+        <a href="maintenance.html">🛠️ Maintenance</a>
+        <a href="seo.html">🔍 SEO Setup</a>
+        <a href="hosting.html">☁️ Hosting Help</a>
+      </div>
+    </div>
+
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Professional Websites That Grow Your Business</h2>
+  <p>We design fast, responsive, and affordable websites across India.</p>
+  <a href="services.html" class="button">View Our Services</a>
+</section>
+
+<section>
+  <h2>Why Choose Ajinkya Web Services?</h2>
+  <div class="services-grid">
+    <div class="card"><i class="fas fa-wallet"></i><h3>Affordable Pricing</h3><p>High-quality websites at budget-friendly prices.</p></div>
+    <div class="card"><i class="fas fa-mobile-alt"></i><h3>Mobile Friendly</h3><p>Perfect on mobile, tablet, and desktop devices.</p></div>
+    <div class="card"><i class="fas fa-bolt"></i><h3>Fast & Reliable</h3><p>Clean code, fast loading, smooth experience.</p></div>
+    <div class="card"><i class="fas fa-users"></i><h3>Expert Team</h3><p>Professional developers and designers at your service.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Our Services</h2>
+  <div class="services-grid">
+    <div class="card" style="background:#e0f2fe;"><i class="fas fa-user"></i><h3>Personal Websites</h3><p>Portfolio, blog, or resume sites to showcase your brand.</p></div>
+    <div class="card" style="background:#fef3c7;"><i class="fas fa-building"></i><h3>Business Websites</h3><p>Professional websites to grow your business online.</p></div>
+    <div class="card" style="background:#fce7f3;"><i class="fas fa-shopping-cart"></i><h3>E-commerce</h3><p>Secure, fully functional online stores to sell products.</p></div>
+    <div class="card" style="background:#d1fae5;"><i class="fas fa-file-alt"></i><h3>Landing Pages</h3><p>High-converting pages for campaigns or promotions.</p></div>
+    <div class="card" style="background:#ede9fe;"><i class="fas fa-sync-alt"></i><h3>Website Redesign</h3><p>Modernize old websites for better UX & SEO.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>How It Works</h2>
+  <div class="services-grid">
+    <div class="card"><i class="fas fa-comments"></i><h3>1. Contact Us</h3><p>Share your idea with us.</p></div>
+    <div class="card"><i class="fas fa-pencil-ruler"></i><h3>2. Design & Develop</h3><p>We design and build your website.</p></div>
+    <div class="card"><i class="fas fa-rocket"></i><h3>3. Launch</h3><p>Your website goes live.</p></div>
+  </div>
+</section>
+
+<section style="text-align:center;background:#f2f2f2;padding:50px 20px;">
+  <h2>Ready to Build Your Website?</h2>
+  <p>Start your online journey with confidence.</p>
+  <a href="contact.html" class="button">Contact Us Now</a>
+</section>
+
+<!-- ======== ABOUT US SECTION ======== -->
+<section class="about-section">
+  <h2>About Ajinkya Web Services</h2>
+  <div class="about-grid">
+    <div class="about-card"><h3><i class="fas fa-bullseye"></i>Our Mission</h3><p>Empowering individuals and businesses to succeed online with affordable, high-quality web solutions.</p></div>
+    <div class="about-card"><h3><i class="fas fa-handshake"></i>Why Choose Us?</h3>
+      <ul>
+        <li><strong>Professional Designs:</strong> Modern, responsive websites for all devices.</li>
+        <li><strong>Customized Solutions:</strong> Tailored to your unique goals.</li>
+        <li><strong>Affordable Pricing:</strong> Top-quality without breaking your budget.</li>
+        <li><strong>Reliable Support:</strong> Guidance even after launch.</li>
+        <li><strong>Fast Delivery:</strong> Quick turnaround without compromising quality.</li>
+      </ul>
+    </div>
+    <div class="about-card"><h3><i class="fas fa-cogs"></i>Our Services</h3>
+      <ul>
+        <li>Personal Websites</li>
+        <li>Business Websites</li>
+        <li>E-commerce Platforms</li>
+        <li>Landing Pages</li>
+        <li>Website Redesign</li>
+      </ul>
+    </div>
+    <div class="about-card"><h3><i class="fas fa-eye"></i>Our Vision</h3><p>Make website creation accessible and simple for everyone, combining creativity, technology, and affordability.</p></div>
+    <div class="about-card"><h3><i class="fas fa-star"></i>What Sets Us Apart?</h3><p>Building relationships, understanding client vision, and providing confidence in their online presence.</p></div>
+    <div class="about-card"><h3><i class="fas fa-check-circle"></i>Our Promise</h3><p>Visually appealing, user-friendly, optimized websites reflecting quality, innovation, and customer satisfaction.</p></div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Ajinkya Web Services. All rights reserved.
+</footer>
+
+<script>
+const items = document.querySelectorAll("h2, h3, p, .card, .button");
+items.forEach(el => el.classList.add("animate"));
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) entry.target.classList.add("show");
+  });
+}, { threshold: 0.15 });
+items.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

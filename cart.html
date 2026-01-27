@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart - Ajinkya Web Services</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+body{
+  font-family: 'Inter', sans-serif;
+  background:#fdfdfd;
+  margin:0;
+  color:#000;
+}
+
+/* ===== HEADER ===== */
+header {
+  background:#000;
+  color:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 25px;
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+header h1{ margin:0; font-size:26px; }
+nav.nav-row{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+nav.nav-row a{
+  color:white;
+  font-weight:bold;
+  padding:6px 12px;
+  border-radius:4px;
+  transition:0.3s;
+}
+nav.nav-row a:hover{ background:#444; }
+.cart-link{ font-size:18px; position:relative; }
+#cart-count{
+  position:absolute;
+  top:-8px;
+  right:-10px;
+  background:red;
+  color:#fff;
+  padding:2px 6px;
+  border-radius:50%;
+  font-size:12px;
+}
+
+/* ===== BACK BUTTON ===== */
+.back-btn{
+  position:fixed;
+  top:90px;
+  left:20px;
+  background:#000;
+  color:#fff;
+  border:none;
+  padding:10px 18px;
+  border-radius:30px;
+  cursor:pointer;
+  z-index:2000;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.back-btn:hover{
+  transform:scale(1.1);
+  background:#444;
+}
+
+/* ===== PAGE TITLE ===== */
+.cart-heading{
+  margin-top:130px;
+  text-align:center;
+  font-size:28px;
+  font-weight:bold;
+  color:#111;
+}
+
+/* ===== CART CONTAINER ===== */
+.cart-container{
+  max-width:900px;
+  margin:40px auto;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  padding:0 15px;
+}
+
+/* ===== CART ITEM ===== */
+.cart-item{
+  background:#fff;
+  color:#000;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:15px;
+  transition:0.3s;
+}
+.cart-item:hover{
+  transform: translateY(-4px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.12);
+}
+.cart-item h2{
+  font-size:18px;
+  margin:0;
+}
+.cart-item p{
+  margin:0;
+  font-size:16px;
+  font-weight:600;
+}
+
+/* ===== QUANTITY ===== */
+.qty-controls{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.qty-controls button{
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  border:none;
+  background:#000;
+  color:#fff;
+  font-size:16px;
+  cursor:pointer;
+}
+
+/* ===== REMOVE BUTTON ===== */
+.btn-remove{
+  background:#e63946;
+  color:#fff;
+  border:none;
+  padding:8px 14px;
+  border-radius:6px;
+  cursor:pointer;
+  transition:0.3s;
+}
+.btn-remove:hover{
+  opacity:0.85;
+}
+
+/* ===== TOTAL BOX ===== */
+.cart-total{
+  max-width:900px;
+  margin:30px auto;
+  background:#000;
+  color:#fff;
+  padding:20px;
+  border-radius:12px;
+  font-size:20px;
+  font-weight:bold;
+  text-align:right;
+  box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* ===== CHECKOUT ===== */
+.checkout-box{
+  text-align:center;
+  margin-bottom:60px;
+}
+.checkout-btn{
+  background:#000;
+  color:#fff;
+  padding:14px 32px;
+  font-size:18px;
+  font-weight:bold;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.3s;
+}
+.checkout-btn:hover{ opacity:0.85; }
+
+/* ===== FOOTER ===== */
+footer{
+  background:#000;
+  color:white;
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
+  font-size:14px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  nav.nav-row{ flex-wrap:wrap; }
+  .cart-item{ flex-direction:column; align-items:flex-start; }
+  .qty-controls{ justify-content:flex-start; }
+}
+</style>
+</head>
+<body>
+
+<!-- BACK BUTTON -->
+<button class="back-btn" onclick="history.back()">← Back</button>
+
+<header>
+  <h1>Ajinkya Web Services</h1>
+  <nav class="nav-row">
+    <!-- Cart in front of Home -->
+    <a href="cart.html" class="cart-link">🛒 <span id="cart-count">0</span></a>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a href="policy.html">Privacy</a>
+  </nav>
+</header>
+
+<h1 class="cart-heading">Your Cart</h1>
+
+<div class="cart-container" id="cartContainer"></div>
+
+<div class="cart-total" id="cartTotal">Total Amount: ₹0</div>
+
+<div class="checkout-box">
+  <button class="checkout-btn" onclick="goCheckout()">Proceed to Checkout</button>
+</div>
+
+<footer>© 2026 Ajinkya Web Services</footer>
+
+<script>
+// Prices for all services
+const servicePrices = {
+  personal: 6000,
+  business: 14999,
+  ecommerce: 24999,
+  landing: 4999,
+  custom: 19999,
+  redesign: 12999
+};
+
+// Load cart from localStorage
+let cartData = JSON.parse(localStorage.getItem("cartData")) || {};
+
+// Fix old formats
+for (let key in cartData) {
+  if (typeof cartData[key]==='object') cartData[key] = Number(cartData[key].qty || 1);
+  else cartData[key] = Number(cartData[key]);
+  if (isNaN(cartData[key]) || cartData[key]<=0) delete cartData[key];
+}
+localStorage.setItem("cartData", JSON.stringify(cartData));
+
+const cartContainer = document.getElementById("cartContainer");
+const cartTotalElem = document.getElementById("cartTotal");
+const cartCountElem = document.getElementById("cart-count");
+
+// Render cart items
+function renderCart(){
+  cartContainer.innerHTML = "";
+  const services = Object.keys(cartData);
+
+  if(services.length === 0){
+    window.location.href = "services.html";
+    return;
+  }
+
+  let totalAmount = 0, totalItems = 0;
+
+  services.forEach(service => {
+    const qty = Number(cartData[service]);
+    const price = Number(servicePrices[service] || 0);
+    const subtotal = qty * price;
+    totalAmount += subtotal;
+    totalItems += qty;
+
+    const item = document.createElement("div");
+    item.className = "cart-item";
+    item.innerHTML = `
+      <h2>${service.charAt(0).toUpperCase() + service.slice(1)} Website</h2>
+      <div class="qty-controls">
+        <button onclick="changeQty('${service}',-1)">−</button>
+        <span>${qty}</span>
+        <button onclick="changeQty('${service}',1)">+</button>
+      </div>
+      <p>₹${price} × ${qty} = ₹${subtotal}</p>
+      <button class="btn-remove" onclick="removeItem('${service}')">Remove</button>
+    `;
+    cartContainer.appendChild(item);
+  });
+
+  cartTotalElem.innerText = `Total Amount: ₹${totalAmount}`;
+  cartCountElem.innerText = totalItems;
+}
+
+// Change quantity
+function changeQty(service, change){
+  cartData[service] = Number(cartData[service]) + change;
+  if(cartData[service]<=0) delete cartData[service];
+  localStorage.setItem("cartData", JSON.stringify(cartData));
+  renderCart();
+}
+
+// Remove item
+function removeItem(service){
+  delete cartData[service];
+  localStorage.setItem("cartData", JSON.stringify(cartData));
+  renderCart();
+}
+
+// Checkout → now links to request-payment.html
+function goCheckout(){
+  if(Object.keys(cartData).length===0) {
+    alert("Your cart is empty!");
+    window.location.href="services.html";
+  } else {
+    window.location.href="request-payment.html"; // UPDATED LINK
+  }
+}
+
+// Initial render
+renderCart();
+</script>
+
+</body>
+</html>
+
+
+

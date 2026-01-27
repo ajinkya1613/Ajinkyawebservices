@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Website – Ajinkya Web Services</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+.page-wrapper{
+  max-width:1200px;
+  margin:auto;
+  padding:120px 20px 60px;
+}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,#000,#1f2933);
+  color:#fff;
+  padding:120px 20px 80px;
+  text-align:center;
+  border-radius:16px;
+  margin-bottom:60px;
+}
+.hero h1{font-size:46px;}
+.hero p{
+  font-size:18px;
+  max-width:850px;
+  margin:20px auto;
+}
+.hero-buttons{margin-top:30px;}
+.hero-btn{
+  display:inline-block;
+  padding:14px 32px;
+  margin:10px;
+  border-radius:8px;
+  font-weight:600;
+  text-decoration:none;
+}
+.hero-btn.primary{
+  background:#ff7a18;
+  color:#fff;
+}
+.hero-btn.secondary{
+  border:2px solid #fff;
+  color:#fff;
+}
+
+/* FEATURES */
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  margin:70px 0;
+}
+.feature-box{
+  border:1px solid #ddd;
+  padding:25px;
+  border-radius:12px;
+  background:#fff;
+}
+.feature-box h3{margin-bottom:10px;}
+
+/* EXAMPLE */
+.example-project{margin-top:80px;}
+.example-card{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:35px;
+  align-items:center;
+  border:1px solid #ddd;
+  padding:30px;
+  border-radius:14px;
+}
+.example-card img{
+  width:100%;
+  border-radius:12px;
+  border:1px solid #ccc;
+}
+.example-content h2{margin-bottom:12px;}
+.example-content p{line-height:1.7;}
+.example-buttons a{
+  display:inline-block;
+  padding:12px 22px;
+  margin-right:10px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:600;
+}
+.view-btn{background:#000;color:#fff;}
+.cart-btn{border:2px solid #000;color:#000;}
+
+@media(max-width:768px){
+  .example-card{grid-template-columns:1fr;}
+  .hero h1{font-size:34px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Ajinkya Web Services</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown">
+      <a class="dropdown-btn">Services ▾</a>
+      <div class="mega-menu-left">
+        <a href="personal.html">Personal Website</a>
+        <a href="business.html">Business Website</a>
+        <a href="custom.html">Custom Website</a>
+      </div>
+    </div>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="page-wrapper">
+
+  <!-- HERO -->
+  <section class="hero fade-up">
+    <h1>Business Website Development</h1>
+    <p>
+      We create professional business websites that build trust,
+      increase conversions, and represent your brand with confidence.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="contact.html" class="hero-btn primary">Get a Free Quote</a>
+      <a href="#example" class="hero-btn secondary">View Example</a>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <div class="features">
+    <div class="feature-box fade-up fade-delay-1">
+      <h3>Professional Design</h3>
+      <p>Modern UI that builds trust.</p>
+    </div>
+    <div class="feature-box fade-up fade-delay-2">
+      <h3>Mobile Responsive</h3>
+      <p>Perfect on all devices.</p>
+    </div>
+    <div class="feature-box fade-up fade-delay-3">
+      <h3>SEO Optimized</h3>
+      <p>Google-friendly structure.</p>
+    </div>
+    <div class="feature-box fade-up fade-delay-3">
+      <h3>Fast & Secure</h3>
+      <p>Optimized speed & safety.</p>
+    </div>
+  </div>
+
+  <!-- EXAMPLE -->
+  <section id="example" class="example-project fade-up">
+    <h2>Example Business Website</h2>
+
+    <div class="example-card">
+      <img src="images/business-portfolio-example.png" alt="Business Website Example">
+
+      <div class="example-content">
+        <h2>Corporate Business Portfolio</h2>
+        <p>
+          A professional business portfolio website designed to
+          showcase services, company info, and generate leads.
+        </p>
+
+        <div class="example-buttons">
+          <a href="example-business.html" target="_blank" class="view-btn">View Website</a>
+          <a href="#" class="cart-btn">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
+
+
+

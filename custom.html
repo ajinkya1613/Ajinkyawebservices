@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Websites | Ajinkya Web Services</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* ================= NAVBAR ================= */
+header{
+  background:#000;
+  color:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 25px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  flex-wrap:wrap;
+}
+header h1{margin:0;font-size:26px;color:#fff;}
+nav{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+nav a{color:white;text-decoration:none;font-weight:bold;padding:6px 12px;border-radius:4px;}
+nav a:hover{background:#444;}
+
+/* ================= MEGA MENU ================= */
+.nav-dropdown{position:relative;}
+.nav-dropdown .dropdown-btn{cursor:pointer;}
+.nav-dropdown .mega-menu-left{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  background:#fff;
+  padding:10px 15px;
+  border-radius:8px;
+  box-shadow:0 4px 12px rgba(0,0,0,.15);
+  min-width:230px;
+  flex-direction:column;
+  z-index:999;
+}
+.nav-dropdown:hover .mega-menu-left{display:flex;}
+.nav-dropdown .mega-menu-left a{
+  color:#000;
+  padding:8px 10px;
+  font-weight:bold;
+  text-decoration:none;
+}
+.nav-dropdown .mega-menu-left a:hover{
+  background:#f0f0f0;
+  border-radius:4px;
+}
+
+/* ================= HERO ================= */
+.hero{
+  padding:140px 20px 60px;
+  text-align:center;
+  background:linear-gradient(135deg,#000,#1f2933,#111827);
+  color:#fff;
+  border-radius:12px;
+  margin:20px;
+}
+.hero h2{font-size:44px;margin-bottom:20px;}
+.hero p{font-size:18px;margin-bottom:30px;}
+.hero .button{
+  padding:16px 40px;
+  background:#fff;
+  color:#000;
+  border:none;
+  border-radius:8px;
+  font-size:18px;
+  cursor:pointer;
+  text-decoration:none;
+}
+.hero .button:hover{background:#f0f0f0;}
+
+/* ================= DESCRIPTION ================= */
+.custom-description{
+  max-width:1000px;
+  margin:50px auto;
+  padding:20px;
+  font-size:18px;
+  line-height:1.7;
+  text-align:justify;
+  background:#f9f9f9;
+  border-radius:12px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* ================= PORTFOLIO ================= */
+.portfolio-section{
+  max-width:1200px;
+  margin:50px auto;
+  padding:0 20px;
+}
+.portfolio-section h3{
+  text-align:center;
+  font-size:32px;
+  margin-bottom:25px;
+}
+.portfolio-cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+.portfolio-card{
+  background:#f7f7f7;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  text-align:center;
+  transition:0.3s;
+}
+.portfolio-card:hover{transform:scale(1.04);}
+.portfolio-card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+.portfolio-card h4{margin:15px 0 10px;}
+.portfolio-card p{
+  padding:0 12px;
+  font-size:15px;
+  color:#444;
+}
+
+/* VIEW BUTTON */
+.view-btn{
+  display:inline-block;
+  margin:15px 0 20px;
+  padding:12px 26px;
+  background:#000;
+  color:#fff;
+  font-weight:bold;
+  border-radius:6px;
+  text-decoration:none;
+  transition:0.3s;
+}
+.view-btn:hover{
+  background:#1f2933;
+  transform:scale(1.05);
+}
+
+/* ================= FEATURES ================= */
+.features-section{
+  max-width:1000px;
+  margin:50px auto;
+  padding:0 20px;
+}
+.features-section h3{text-align:center;font-size:32px;margin-bottom:25px;}
+.features-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+.feature-card{
+  background:#f7f7f7;
+  padding:20px;
+  border-radius:10px;
+  text-align:center;
+  font-size:18px;
+  font-weight:bold;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* ================= CTA ================= */
+.cta-section{text-align:center;margin:50px 0;}
+.cta-section .button{
+  padding:16px 40px;
+  background:#000;
+  color:#fff;
+  border-radius:8px;
+  text-decoration:none;
+}
+.cta-section .button:hover{background:#1f2933;}
+
+/* ================= WHATSAPP ================= */
+.whatsapp{
+  position:fixed;
+  bottom:25px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#25D366;
+  color:#fff;
+  padding:18px 30px;
+  border-radius:50px;
+  font-size:20px;
+  font-weight:bold;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+}
+
+/* FOOTER */
+footer{text-align:center;padding:35px;background:#000;color:#fff;margin-top:50px;}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Ajinkya Web Services</h1>
+<nav>
+<a href="index.html">Home</a>
+<div class="nav-dropdown">
+<a class="dropdown-btn">Services ▾</a>
+<div class="mega-menu-left">
+<a href="personal.html">Personal Websites</a>
+<a href="business.html">Business Websites</a>
+<a href="custom.html">Custom Websites</a>
+<a href="seo.html">SEO Setup</a>
+</div>
+</div>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<h2>Custom Website Development</h2>
+<p>We design and develop premium custom websites that match your brand, goals, and business vision.</p>
+<a href="contact.html" class="button">Request Custom Website</a>
+</section>
+
+<section class="custom-description">
+<p>
+Our custom websites are handcrafted to meet real business needs. We focus on design quality, performance,
+mobile responsiveness, SEO structure, and user experience to ensure your website converts visitors into customers.
+</p>
+</section>
+
+<!-- ✅ BUSINESS PORTFOLIO EXAMPLE -->
+<section class="portfolio-section">
+<h3>Real Example – Business Portfolio Website</h3>
+
+<div class="portfolio-cards">
+  <div class="portfolio-card">
+    <img src="images/business-portfolio-example.png" alt="Business Portfolio Website Example">
+    <h4>Professional Business Portfolio</h4>
+    <p>
+      Clean corporate design with hero section, services, portfolio showcase,
+      contact CTA, and responsive layout.
+    </p>
+    <a href="business-portfolio-demo.html" target="_blank" class="view-btn">👁 View Website</a>
+  </div>
+</div>
+</section>
+
+<section class="features-section">
+<h3>What You Get</h3>
+<div class="features-list">
+  <div class="feature-card">🎨 Custom UI Design</div>
+  <div class="feature-card">📱 Mobile Friendly</div>
+  <div class="feature-card">⚡ Fast Performance</div>
+  <div class="feature-card">🔍 SEO Ready</div>
+  <div class="feature-card">🔐 Secure Code</div>
+  <div class="feature-card">📊 Analytics Setup</div>
+</div>
+</section>
+
+<section class="cta-section">
+<h3>Want This Website for Your Business?</h3>
+<p>We can customize this exact layout for your brand.</p>
+<a href="contact.html" class="button">Order This Website</a>
+</section>
+
+<a class="whatsapp" href="https://wa.me/917822901453" target="_blank">
+<i class="fa-brands fa-whatsapp"></i> Contact Me on WhatsApp
+</a>
+
+<footer>© 2026 Ajinkya Web Services. All rights reserved.</footer>
+
+</body>
+</html>
+

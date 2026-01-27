@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechNova Solutions | Business Portfolio</title>
+
+<style>
+/* ===== BASIC RESET ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI, Tahoma, sans-serif;
+}
+body{
+  background:#ffffff;
+  color:#111;
+  line-height:1.6;
+}
+a{text-decoration:none;color:inherit;}
+
+/* ===== HEADER ===== */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:#000;
+  color:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 30px;
+  z-index:1000;
+}
+header h1{
+  font-size:24px;
+}
+nav{
+  display:flex;
+  gap:20px;
+}
+nav a{
+  color:#fff;
+  font-weight:600;
+}
+nav a:hover{
+  text-decoration:underline;
+}
+
+/* ===== HERO ===== */
+.hero{
+  padding:140px 20px 90px;
+  background:linear-gradient(135deg,#000,#1f2933,#111827);
+  color:#fff;
+  text-align:center;
+}
+.hero h2{
+  font-size:46px;
+  margin-bottom:20px;
+}
+.hero p{
+  font-size:18px;
+  max-width:750px;
+  margin:auto;
+  margin-bottom:30px;
+}
+.hero .btn{
+  padding:16px 40px;
+  background:#fff;
+  color:#000;
+  font-size:18px;
+  border-radius:8px;
+  font-weight:bold;
+  display:inline-block;
+  transition:.3s;
+}
+.hero .btn:hover{
+  background:#e5e7eb;
+}
+
+/* ===== SECTIONS ===== */
+section{
+  max-width:1200px;
+  margin:auto;
+  padding:80px 20px;
+}
+section h3{
+  text-align:center;
+  font-size:34px;
+  margin-bottom:40px;
+}
+
+/* ===== ABOUT ===== */
+.about{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+.about img{
+  width:100%;
+  border-radius:12px;
+}
+.about p{
+  font-size:18px;
+  text-align:justify;
+}
+
+/* ===== SERVICES ===== */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+.service-card{
+  background:#f7f7f7;
+  padding:30px;
+  border-radius:12px;
+  text-align:center;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  transition:.3s;
+}
+.service-card:hover{
+  transform:translateY(-8px);
+}
+.service-card h4{
+  margin-bottom:15px;
+  font-size:22px;
+}
+
+/* ===== PROJECTS ===== */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+.project-card{
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+.project-card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+.project-card div{
+  padding:20px;
+}
+.project-card h4{
+  margin-bottom:10px;
+}
+
+/* ===== WHY CHOOSE US ===== */
+.why{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+.why-card{
+  background:#000;
+  color:#fff;
+  padding:30px;
+  border-radius:12px;
+}
+
+/* ===== CTA ===== */
+.cta{
+  text-align:center;
+  background:#f9fafb;
+  padding:80px 20px;
+}
+.cta h3{
+  margin-bottom:20px;
+}
+.cta a{
+  padding:18px 45px;
+  background:#000;
+  color:#fff;
+  border-radius:8px;
+  font-size:18px;
+  font-weight:bold;
+}
+.cta a:hover{
+  background:#1f2933;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:#000;
+  color:#fff;
+  text-align:center;
+  padding:30px;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  .hero h2{font-size:34px;}
+  .about{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <h1>TechNova Solutions</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Projects</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h2>Professional Business Solutions</h2>
+  <p>
+    We help businesses grow with modern websites, digital strategies,
+    and scalable technology solutions designed for long-term success.
+  </p>
+  <a href="#" class="btn">Get a Free Consultation</a>
+</section>
+
+<!-- ABOUT -->
+<section>
+  <h3>About Our Company</h3>
+  <div class="about">
+    <p>
+      TechNova Solutions is a forward-thinking digital agency focused on
+      delivering high-quality business websites and digital solutions.
+      Our mission is to help brands establish a strong online presence
+      through clean design, fast performance, and user-friendly experiences.
+      We work closely with clients to understand their goals and transform
+      ideas into powerful digital products.
+    </p>
+    <img src="https://via.placeholder.com/500x350" alt="Office">
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section>
+  <h3>Our Services</h3>
+  <div class="services">
+    <div class="service-card">
+      <h4>Business Websites</h4>
+      <p>Professional websites designed to build trust and convert visitors.</p>
+    </div>
+    <div class="service-card">
+      <h4>UI / UX Design</h4>
+      <p>Clean, modern and user-focused interface designs.</p>
+    </div>
+    <div class="service-card">
+      <h4>SEO Optimization</h4>
+      <p>Improve Google ranking and attract organic traffic.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section>
+  <h3>Our Projects</h3>
+  <div class="projects">
+    <div class="project-card">
+      <img src="https://via.placeholder.com/400x250">
+      <div>
+        <h4>Corporate Website</h4>
+        <p>Professional corporate website for a tech company.</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="https://via.placeholder.com/400x250">
+      <div>
+        <h4>Business Landing Page</h4>
+        <p>High-conversion landing page for a startup.</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="https://via.placeholder.com/400x250">
+      <div>
+        <h4>Company Portfolio</h4>
+        <p>Elegant portfolio website for a consulting firm.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section>
+  <h3>Why Choose Us</h3>
+  <div class="why">
+    <div class="why-card">✔ Professional & modern design</div>
+    <div class="why-card">✔ Mobile-friendly & fast loading</div>
+    <div class="why-card">✔ SEO-ready structure</div>
+    <div class="why-card">✔ Long-term business growth focus</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h3>Let’s Build Your Business Website</h3>
+  <p>Contact us today and take your business online professionally.</p><br>
+  <a href="#">Contact Us</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 TechNova Solutions. All rights reserved.
+</footer>
+
+</body>
+</html>
+
