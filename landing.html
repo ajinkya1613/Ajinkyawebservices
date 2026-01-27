@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landing Pages – Ajinkya Web Services</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* PAGE WRAPPER */
+.page-wrapper{
+  max-width:1200px;
+  margin:auto;
+  padding:120px 20px 60px;
+}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,#020617,#1e293b);
+  color:#fff;
+  padding:120px 20px 80px;
+  text-align:center;
+  border-radius:18px;
+  margin-bottom:60px;
+}
+.hero h1{font-size:46px;}
+.hero p{
+  font-size:18px;
+  max-width:850px;
+  margin:20px auto;
+}
+.hero-btn{
+  display:inline-block;
+  padding:14px 34px;
+  background:#22c55e;
+  color:#fff;
+  border-radius:8px;
+  font-weight:600;
+  text-decoration:none;
+  margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <h1>Ajinkya Web Services</h1>
+  <nav>
+    <a href="index.html">Home</a>
+
+    <div class="nav-dropdown">
+      <a class="dropdown-btn">Services ▾</a>
+      <div class="mega-menu-left">
+        <a href="personal.html">Personal Website</a>
+        <a href="business.html">Business Website</a>
+        <a href="landing.html">Landing Pages</a>
+        <a href="ecommerce.html">E-Commerce Website</a>
+        <a href="custom.html">Custom Website</a>
+      </div>
+    </div>
+
+    <a href="contact.html">
+      <i class="fa fa-cart-shopping"></i>
+      <span id="cartCount" class="cart-badge">0</span>
+    </a>
+  </nav>
+</header>
+
+<div class="page-wrapper">
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>High-Converting Landing Pages</h1>
+    <p>
+      We design landing pages focused on one goal —
+      conversions. Perfect for ads, promotions, product launches,
+      and lead generation.
+    </p>
+    <a href="contact.html" class="hero-btn">Get Landing Page</a>
+  </section>
+
+  <!-- FEATURES -->
+  <section>
+    <h2>Why Our Landing Pages Work</h2>
+
+    <div class="features">
+      <div class="feature-box">
+        <h3>Conversion Focused</h3>
+        <p>Designed to turn visitors into leads or customers.</p>
+      </div>
+
+      <div class="feature-box">
+        <h3>Fast Loading</h3>
+        <p>Optimized code for lightning-fast performance.</p>
+      </div>
+
+      <div class="feature-box">
+        <h3>Mobile Optimized</h3>
+        <p>Perfect layout on mobile, tablet, and desktop.</p>
+      </div>
+
+      <div class="feature-box">
+        <h3>CTA Optimized</h3>
+        <p>Strong call-to-action buttons for better results.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXAMPLE -->
+  <section class="example-project">
+    <h2>Example Landing Page (Our Work)</h2>
+
+    <div class="example-card">
+      <img src="images/landing-example.png" alt="Landing Page Example">
+
+      <div class="example-content">
+        <h2>Product Launch Landing Page</h2>
+        <p>
+          A clean, high-impact landing page designed for
+          paid ads and product launches. Includes hero section,
+          benefits, testimonials, CTA buttons, and lead form.
+        </p>
+
+        <div class="example-buttons">
+          <a href="example-landing.html" target="_blank" class="view-btn">
+            View Page
+          </a>
+          <a href="#" class="cart-btn" onclick="addToCart()">
+            Add to Cart
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing">
+    <h2>Landing Page Pricing</h2>
+
+    <div class="pricing-grid">
+
+      <div class="price-card">
+        <h3>Starter</h3>
+        <p class="price">₹3,999</p>
+        <ul>
+          <li>Single Page</li>
+          <li>CTA Section</li>
+          <li>Mobile Responsive</li>
+        </ul>
+        <a href="contact.html" class="price-btn">Choose</a>
+      </div>
+
+      <div class="price-card">
+        <h3>Professional</h3>
+        <p class="price">₹6,999</p>
+        <ul>
+          <li>Advanced Sections</li>
+          <li>Lead Form</li>
+          <li>SEO Ready</li>
+        </ul>
+        <a href="contact.html" class="price-btn">Choose</a>
+      </div>
+
+      <div class="price-card">
+        <h3>Marketing Pro</h3>
+        <p class="price">₹9,999</p>
+        <ul>
+          <li>Ad Optimized</li>
+          <li>Analytics Setup</li>
+          <li>High Conversion Design</li>
+        </ul>
+        <a href="contact.html" class="price-btn">Choose</a>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<script>
+let cart = 0;
+function addToCart(){
+  cart++;
+  document.getElementById("cartCount").innerText = cart;
+  alert("Landing Page added to cart!");
+}
+</script>
+
+</body>
+</html>
+

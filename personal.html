@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Websites – Ajinkya Web Services</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* PAGE WRAPPER */
+.page-wrapper{
+  max-width:1200px;
+  margin:auto;
+  padding:120px 20px 60px;
+}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,#0b0f1f,#1e293b);
+  color:#fff;
+  padding:120px 20px 80px;
+  text-align:center;
+  border-radius:18px;
+  margin-bottom:60px;
+}
+.hero h1{font-size:46px;}
+.hero p{
+  font-size:18px;
+  max-width:850px;
+  margin:20px auto;
+}
+.hero-btn{
+  display:inline-block;
+  padding:14px 34px;
+  background:#3b82f6;
+  color:#fff;
+  border-radius:8px;
+  font-weight:600;
+  text-decoration:none;
+  margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <h1>Ajinkya Web Services</h1>
+  <nav>
+    <a href="index.html">Home</a>
+
+    <div class="nav-dropdown">
+      <a class="dropdown-btn">Services ▾</a>
+      <div class="mega-menu-left">
+        <a href="personal.html">Personal Website</a>
+        <a href="business.html">Business Website</a>
+        <a href="landing.html">Landing Pages</a>
+        <a href="ecommerce.html">E-Commerce Website</a>
+        <a href="custom.html">Custom Website</a>
+      </div>
+    </div>
+
+    <a href="contact.html">
+      <i class="fa fa-cart-shopping"></i>
+      <span id="cartCount" class="cart-badge">0</span>
+    </a>
+  </nav>
+</header>
+
+<div class="page-wrapper">
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Stunning Personal Websites</h1>
+    <p>
+      Build your personal brand with a professional website. Showcase your portfolio, resume, blog, or personal projects
+      with a unique design that reflects you.
+    </p>
+    <a href="contact.html" class="hero-btn">Get Personal Website</a>
+  </section>
+
+  <!-- FEATURES -->
+  <section>
+    <h2>Why Choose Our Personal Websites</h2>
+
+    <div class="features">
+      <div class="feature-box">
+        <h3>Professional Design</h3>
+        <p>Clean, modern, and personalized layouts for your style.</p>
+      </div>
+
+      <div class="feature-box">
+        <h3>Responsive</h3>
+        <p>Works flawlessly on desktop, tablet, and mobile devices.</p>
+      </div>
+
+      <div class="feature-box">
+        <h3>Portfolio Ready</h3>
+        <p>Showcase your work, achievements, or creative projects easily.</p>
+      </div>
+
+      <div class="feature-box">
+        <h3>SEO Friendly</h3>
+        <p>Optimized for search engines so people can find you online.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXAMPLE -->
+  <section class="example-project">
+    <h2>Example Personal Website (Our Work)</h2>
+
+    <div class="example-card">
+      <img src="images/personal-example.png" alt="Personal Website Example">
+
+      <div class="example-content">
+        <h2>Portfolio & Resume Site</h2>
+        <p>
+          A professional personal website with a portfolio, blog, and resume sections. Perfect for freelancers, designers,
+          developers, or anyone building a personal brand online.
+        </p>
+
+        <div class="example-buttons">
+          <a href="example-personal.html" target="_blank" class="view-btn">
+            View Page
+          </a>
+          <a href="#" class="cart-btn" onclick="addToCart()">
+            Add to Cart
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing">
+    <h2>Personal Website Pricing</h2>
+
+    <div class="pricing-grid">
+
+      <div class="price-card">
+        <h3>Starter</h3>
+        <p class="price">₹2,999</p>
+        <ul>
+          <li>Single Page</li>
+          <li>Portfolio Section</li>
+          <li>Responsive Design</li>
+        </ul>
+        <a href="contact.html" class="price-btn">Choose</a>
+      </div>
+
+      <div class="price-card">
+        <h3>Professional</h3>
+        <p class="price">₹5,499</p>
+        <ul>
+          <li>Multiple Pages</li>
+          <li>Blog/Portfolio</li>
+          <li>SEO Ready</li>
+        </ul>
+        <a href="contact.html" class="price-btn">Choose</a>
+      </div>
+
+      <div class="price-card">
+        <h3>Premium</h3>
+        <p class="price">₹8,499</p>
+        <ul>
+          <li>Custom Design</li>
+          <li>Lead Form</li>
+          <li>Analytics & SEO</li>
+        </ul>
+        <a href="contact.html" class="price-btn">Choose</a>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<script>
+let cart = 0;
+function addToCart(){
+  cart++;
+  document.getElementById("cartCount").innerText = cart;
+  alert("Personal Website added to cart!");
+}
+</script>
+
+</body>
+</html>
+

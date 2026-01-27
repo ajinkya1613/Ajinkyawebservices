@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Maintenance | Ajinkya Web Services</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* ================= NAVBAR ================= */
+header{
+  background:#000;
+  color:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 25px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  flex-wrap:wrap;
+}
+header h1{margin:0;font-size:26px;color:#fff;}
+nav{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+nav a{color:white;text-decoration:none;font-weight:bold;padding:6px 12px;border-radius:4px;}
+nav a:hover{background:#444;}
+
+/* ================= MEGA MENU ================= */
+.nav-dropdown{position:relative;}
+.nav-dropdown .dropdown-btn{cursor:pointer;}
+.nav-dropdown .mega-menu-left{
+  display:none;position:absolute;top:100%;left:0;background:#fff;padding:10px 15px;
+  border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.15);min-width:230px;flex-direction:column;z-index:999;
+}
+.nav-dropdown:hover .mega-menu-left{display:flex;}
+.nav-dropdown .mega-menu-left a{color:#000;padding:8px 10px;font-weight:bold;text-decoration:none;}
+.nav-dropdown .mega-menu-left a:hover{background:#f0f0f0;border-radius:4px;}
+
+/* ================= HERO ================= */
+.hero{
+  padding:140px 20px 60px;
+  text-align:center;
+  background:linear-gradient(135deg,#000,#1f2933,#111827);
+  color:#fff;
+  border-radius:12px;
+  margin:20px;
+}
+.hero h2{font-size:44px;margin-bottom:20px;}
+.hero p{font-size:18px;margin-bottom:30px;}
+.hero .button{
+  padding:16px 40px;
+  background:#fff;
+  color:#000;
+  border:none;
+  border-radius:8px;
+  font-size:18px;
+  cursor:pointer;
+  transition:0.3s;
+  text-decoration:none;
+}
+.hero .button:hover{background:#f0f0f0;}
+
+/* ================= MAINTENANCE DESCRIPTION ================= */
+.maintenance-description{
+  max-width:1000px;
+  margin:50px auto;
+  padding:20px;
+  font-size:18px;
+  line-height:1.7;
+  text-align:justify;
+  background:#f9f9f9;
+  border-radius:12px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* ================= SERVICES CARDS ================= */
+.services-section{
+  max-width:1200px;
+  margin:50px auto;
+  padding:0 20px;
+}
+.services-section h3{text-align:center;font-size:32px;margin-bottom:25px;}
+.service-cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  justify-items:center;
+}
+.card{
+  background:#f7f7f7;
+  padding:20px;
+  border-radius:10px;
+  text-align:center;
+  font-size:18px;
+  font-weight:bold;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* ================= CTA BUTTON ================= */
+.cta-section{text-align:center;margin:50px 0;}
+.cta-section .button{
+  padding:16px 40px;
+  background:#000;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  font-size:18px;
+  cursor:pointer;
+  transition:0.3s;
+  text-decoration:none;
+}
+.cta-section .button:hover{background:#1f2933;}
+
+/* ================= WHATSAPP BUTTON ================= */
+.whatsapp{
+  position:fixed;
+  bottom:25px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#25D366;
+  color:#fff;
+  padding:18px 30px;
+  border-radius:50px;
+  font-size:20px;
+  font-weight:bold;
+  box-shadow:0 4px 12px rgba(0,0,0,0.3);
+  cursor:pointer;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  transition:0.3s;
+}
+.whatsapp:hover{
+  transform:translateX(-50%) scale(1.1);
+  box-shadow:0 6px 18px rgba(0,0,0,0.4);
+}
+
+/* ================= FOOTER ================= */
+footer{text-align:center;padding:35px 20px;background:#000;color:#fff;margin-top:50px;}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+  .hero h2{font-size:32px;}
+  .hero p{font-size:16px;}
+  .services-section h3{font-size:28px;}
+  .maintenance-description{font-size:16px;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+<h1>Ajinkya Web Services</h1>
+<nav>
+<a href="index.html">Home</a>
+<div class="nav-dropdown">
+<a class="dropdown-btn">Services ▾</a>
+<div class="mega-menu-left">
+<a href="personal.html">🖥️ Personal Websites</a>
+<a href="business.html">🏢 Business Websites</a>
+<a href="ecommerce.html">🛒 E-commerce Websites</a>
+<a href="landing.html">📄 Landing Pages</a>
+<a href="custom.html">⚙️ Custom Websites</a>
+<a href="redesign.html">🔄 Website Redesign</a>
+<a href="maintenance.html">🛠 Maintenance</a>
+<a href="seo.html">⚡ SEO Setup</a>
+<a href="hosting.html">🌐 Hosting Help</a>
+</div>
+</div>
+<a href="contact.html">Contact</a>
+<a href="policy.html">Privacy Policy</a>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<h2>Website Maintenance Services</h2>
+<p>Keep your website running smoothly, secure, and updated. We provide complete website maintenance services tailored for your business needs.</p>
+<a href="contact.html" class="button">Get Maintenance Help</a>
+</section>
+
+<!-- BIG DESCRIPTION -->
+<section class="maintenance-description">
+<p>
+At Ajinkya Web Services, our website maintenance services ensure your online presence is always at its best. We handle regular updates, security monitoring, plugin and theme management, bug fixes, performance optimization, backups, and server checks. Our team provides 24/7 monitoring, ensuring your website remains fast, secure, and functional. By choosing our maintenance services, you prevent downtime, protect your website from threats, and keep your visitors engaged with a smooth browsing experience. Whether you run a small business website or a large e-commerce platform, we tailor our maintenance plans to meet your needs and help your business grow online without any interruptions.
+</p>
+</section>
+
+<!-- SERVICES CARDS -->
+<section class="services-section">
+<h3>Maintenance Services We Offer</h3>
+<div class="service-cards">
+<div class="card">🛠 Regular Updates</div>
+<div class="card">🔒 Security Monitoring</div>
+<div class="card">⚡ Performance Optimization</div>
+<div class="card">💾 Backup & Restore</div>
+<div class="card">🐞 Bug Fixes</div>
+<div class="card">📊 Analytics & Reports</div>
+<div class="card">🌐 Server Monitoring</div>
+<div class="card">📧 Email & Plugin Support</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+<h3>Need Professional Website Maintenance?</h3>
+<p>Contact us today and let us manage your website while you focus on growing your business.</p>
+<a href="contact.html" class="button">Get Maintenance Support</a>
+</section>
+
+<!-- WHATSAPP FLOAT -->
+<a class="whatsapp" href="https://wa.me/917822901453" target="_blank">
+<i class="fa-brands fa-whatsapp"></i> Contact Me on WhatsApp
+</a>
+
+<!-- FOOTER -->
+<footer>© 2026 Ajinkya Web Services. All rights reserved.</footer>
+
+<script>
+// MOBILE TOUCH TOGGLE FOR MEGA MENU
+document.addEventListener('DOMContentLoaded', () => {
+const dropdowns = document.querySelectorAll('.nav-dropdown .dropdown-btn');
+dropdowns.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const menu = btn.nextElementSibling;
+    menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+  });
+});
+});
+</script>
+
+</body>
+</html>
+
+
