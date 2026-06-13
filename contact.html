@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Contact | Ajinkya Web Services</title>
+
+  <link rel="stylesheet" href="contact.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+  <div class="contact-bg"></div>
+
+  <header class="navbar">
+    <a href="index.html" class="brand">
+      <div class="brand-seal">AWS</div>
+      <div>
+        <h3>Ajinkya Web Services</h3>
+        <span>Premium Website Studio</span>
+      </div>
+    </a>
+
+    <nav class="nav-menu" id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="index.html#websites">Websites</a>
+      <a href="index.html#demos">Demos</a>
+      <a href="index.html#pricing">Pricing</a>
+    </nav>
+
+    <a href="#planner" class="nav-action">Start Project</a>
+
+    <button class="menu-btn" id="menuBtn">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </header>
+
+  <section class="contact-hero">
+    <div class="hero-left">
+      <p class="badge">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+        Premium Project Planner
+      </p>
+
+      <h1>
+        Let’s Build A Website That Looks
+        <span>Professional.</span>
+      </h1>
+
+      <p>
+        Select your website type, add-ons, budget and timeline. The planner will create a clean WhatsApp enquiry message for your project.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#planner" class="btn-main">
+          Plan My Website
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <a href="index.html#demos" class="btn-ghost">
+          View Demos
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="card-top">
+        <span></span><span></span><span></span>
+      </div>
+
+      <h3>Project Readiness</h3>
+
+      <div class="score-ring">
+        <strong>Ready</strong>
+        <span>To Discuss</span>
+      </div>
+
+      <div class="mini-list">
+        <div><i class="fa-solid fa-check"></i> Website type selected</div>
+        <div><i class="fa-solid fa-check"></i> Add-ons planned</div>
+        <div><i class="fa-solid fa-check"></i> WhatsApp summary ready</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust-row">
+    <div>
+      <strong>Premium UI</strong>
+      <span>Modern design</span>
+    </div>
+    <div>
+      <strong>Responsive</strong>
+      <span>Mobile friendly</span>
+    </div>
+    <div>
+      <strong>Lead Ready</strong>
+      <span>Contact flow</span>
+    </div>
+    <div>
+      <strong>Demo Based</strong>
+      <span>Clear examples</span>
+    </div>
+  </section>
+
+  <section class="planner-section" id="planner">
+    <div class="section-head">
+      <p>Project Planner</p>
+      <h2>Choose What You Want To Build</h2>
+      <span>Fill this once and send a professional project summary on WhatsApp.</span>
+    </div>
+
+    <div class="planner-layout">
+      <form class="planner-form" id="projectForm">
+        <div class="form-block">
+          <h3>1. Basic Details</h3>
+
+          <div class="form-grid">
+            <div class="input-group">
+              <label>Your Name</label>
+              <input type="text" id="clientName" placeholder="Enter your name">
+            </div>
+
+            <div class="input-group">
+              <label>Phone / WhatsApp</label>
+              <input type="tel" id="clientPhone" placeholder="Enter phone number">
+            </div>
+
+            <div class="input-group full">
+              <label>Business / Brand Name</label>
+              <input type="text" id="brandName" placeholder="Example: Royal Cafe, Dream Homes, etc">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-block">
+          <h3>2. Website Type</h3>
+
+          <div class="choice-grid website-choices">
+            <label><input type="radio" name="websiteType" value="Personal Website"> <span><i class="fa-solid fa-user"></i> Personal</span></label>
+            <label><input type="radio" name="websiteType" value="Business Website"> <span><i class="fa-solid fa-briefcase"></i> Business</span></label>
+            <label><input type="radio" name="websiteType" value="Landing Page"> <span><i class="fa-solid fa-bullseye"></i> Landing</span></label>
+            <label><input type="radio" name="websiteType" value="Custom Website"> <span><i class="fa-solid fa-crown"></i> Custom</span></label>
+            <label><input type="radio" name="websiteType" value="Website Redesign"> <span><i class="fa-solid fa-wand-magic-sparkles"></i> Redesign</span></label>
+            <label><input type="radio" name="websiteType" value="Cafe / Restaurant Website"> <span><i class="fa-solid fa-mug-hot"></i> Cafe / Restaurant</span></label>
+            <label><input type="radio" name="websiteType" value="Real Estate Website"> <span><i class="fa-solid fa-building"></i> Real Estate</span></label>
+            <label><input type="radio" name="websiteType" value="Ecommerce Website"> <span><i class="fa-solid fa-cart-shopping"></i> Ecommerce</span></label>
+          </div>
+        </div>
+
+        <div class="form-block">
+  <h3>3. Recommended Add-ons</h3>
+  <p class="block-note" id="addonNote">
+    Pehle website type select karo, uske hisaab se add-ons show honge.
+  </p>
+
+  <div class="dynamic-addons" id="dynamicAddons"></div>
+</div>
+        </div>
+
+        <div class="form-block">
+          <h3>4. Budget & Timeline</h3>
+
+          <div class="form-grid">
+            <div class="input-group">
+              <label>Budget Range</label>
+              <select id="budget">
+                <option value="">Select budget</option>
+                <option>₹4,999 - ₹7,999</option>
+                <option>₹8,000 - ₹14,999</option>
+                <option>₹15,000 - ₹24,999</option>
+                <option>₹25,000+</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label>Timeline</label>
+              <select id="timeline">
+                <option value="">Select timeline</option>
+                <option>Urgent: 1-3 days</option>
+                <option>Normal: 4-7 days</option>
+                <option>Flexible: 1-2 weeks</option>
+                <option>Not fixed yet</option>
+              </select>
+            </div>
+
+            <div class="input-group full">
+              <label>Project Details</label>
+              <textarea id="message" placeholder="Tell me pages, features, business type, reference website, etc..."></textarea>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <aside class="summary-panel">
+        <div class="summary-card">
+          <p class="summary-label">Live Summary</p>
+          <h3>Your Website Plan</h3>
+
+          <div class="summary-list">
+            <div>
+              <span>Type</span>
+              <strong id="summaryType">Not selected</strong>
+            </div>
+            <div>
+              <span>Budget</span>
+              <strong id="summaryBudget">Not selected</strong>
+            </div>
+            <div>
+              <span>Timeline</span>
+              <strong id="summaryTimeline">Not selected</strong>
+            </div>
+          </div>
+
+          <div class="selected-addons-box">
+  <h4>Selected Add-ons</h4>
+  <div id="selectedAddons">No add-ons selected</div>
+</div>
+
+<div class="estimate-box">
+  <span>Total Estimate</span>
+  <h2 id="estimatePrice">₹4,999+</h2>
+  <p>Final price depends on pages, features and content.</p>
+</div>
+
+          <button type="button" id="sendWhatsapp">
+            Send Project On WhatsApp
+            <i class="fa-brands fa-whatsapp"></i>
+          </button>
+        </div>
+
+        <div class="support-card">
+          <i class="fa-solid fa-headset"></i>
+          <div>
+            <h4>Need help choosing?</h4>
+            <p>Select “Not sure yet” in budget and explain your idea.</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div>
+      <h3>Ajinkya Web Services</h3>
+      <p>Premium websites for businesses, brands and online stores.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#websites">Websites</a>
+      <a href="index.html#demos">Demos</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script src="contact.js"></script>
+</body>
+</html>
