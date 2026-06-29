@@ -96,17 +96,6 @@ const addonData = {
   ]
 };
 
-const priceMap = {
-  "Personal Website": 6000,
-  "Business Website": 14999,
-  "Landing Page": 4999,
-  "Custom Website": 12000,
-  "Website Redesign": 4999,
-  "Cafe / Restaurant Website": 14999,
-  "Real Estate Website": 14999,
-  "Ecommerce Website": 24999
-};
-
 const dynamicAddons = document.getElementById("dynamicAddons");
 const addonNote = document.getElementById("addonNote");
 
@@ -129,12 +118,12 @@ function renderAddons(type) {
   dynamicAddons.innerHTML = "";
 
   if (!type) {
-    addonNote.textContent = "Pehle website type select karo, uske hisaab se add-ons show honge.";
+    addonNote.textContent = "First select a website type, then recommended add-ons will appear.";
     selectedAddonsBox.innerHTML = "No add-ons selected";
     return;
   }
 
-  addonNote.textContent = `${type} ke liye recommended add-ons:`;
+  addonNote.textContent = `Recommended add-ons for ${type}:`;
 
   addonData[type].forEach(addon => {
     const label = document.createElement("label");
@@ -144,7 +133,7 @@ function renderAddons(type) {
       <input type="checkbox" value="${addon[0]}" data-price="${addon[1]}">
       <span>
         <b>${addon[0]}</b>
-        <small>+₹${addon[1].toLocaleString()}</small>
+        <small>+$${addon[1].toLocaleString()}</small>
         <small>${addon[2]}</small>
       </span>
     `;
@@ -171,7 +160,7 @@ function updateSummary() {
   summaryBudget.textContent = budget.value || "Not selected";
   summaryTimeline.textContent = timeline.value || "Not selected";
 
-  let total = priceMap[type] || 4999;
+  let total = basePrices[type] || 499;
   const selectedAddons = getSelectedAddons();
 
   selectedAddonsBox.innerHTML = "";
@@ -185,13 +174,13 @@ function updateSummary() {
       selectedAddonsBox.innerHTML += `
         <div class="summary-addon">
           <span>${addon.name}</span>
-          <strong>+₹${addon.price.toLocaleString()}</strong>
+          <strong>+$${addon.price.toLocaleString()}</strong>
         </div>
       `;
     });
   }
 
-  estimatePrice.textContent = "₹" + total.toLocaleString();
+  estimatePrice.textContent = "$" + total.toLocaleString() + "+";
 }
 
 document.querySelectorAll('input[name="websiteType"]').forEach(item => {
@@ -219,7 +208,7 @@ sendBtn.addEventListener("click", () => {
   }
 
   const addonText = addons.length
-    ? addons.map(addon => `${addon.name} (+₹${addon.price.toLocaleString()})`).join(", ")
+    ? addons.map(addon => `${addon.name} (+$${addon.price.toLocaleString()})`).join(", ")
     : "None selected";
 
   const whatsappMessage =
