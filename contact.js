@@ -11,70 +11,88 @@ if (menuBtn && navMenu) {
   });
 }
 
+const basePrices = {
+  "Personal Website": 499,
+  "Business Website": 999,
+  "Landing Page": 499,
+  "Custom Website": 2499,
+  "Website Redesign": 699,
+  "Cafe / Restaurant Website": 999,
+  "Real Estate Website": 1299,
+  "Ecommerce Website": 2499
+};
+
 const addonData = {
   "Personal Website": [
-    ["Resume Section", 499, "Education, skills and experience showcase"],
-    ["Project Portfolio", 999, "Your work/projects with cards"],
-    ["Social Links", 299, "Instagram, LinkedIn, GitHub buttons"],
-    ["Contact Form", 999, "Direct enquiry section"],
-    ["Download CV Button", 499, "Resume download CTA"],
-    ["SEO Setup", 1999, "Basic Google-ready structure"]
+    ["Resume Section", 99, "Education, skills and experience showcase"],
+    ["Project Portfolio", 199, "Your work/projects with premium cards"],
+    ["Social Links", 49, "Instagram, LinkedIn, GitHub buttons"],
+    ["Contact Form", 149, "Direct enquiry form"],
+    ["Download CV Button", 79, "Resume download CTA"],
+    ["Basic SEO Setup", 299, "Google-ready page structure"]
   ],
+
   "Business Website": [
-    ["WhatsApp Button", 499, "Direct customer enquiry"],
-    ["Service Pages", 1999, "Separate pages for services"],
-    ["Testimonials", 799, "Trust-building client reviews"],
-    ["Google Map", 499, "Location section"],
-    ["Contact Form", 999, "Lead collection form"],
-    ["SEO Setup", 1999, "Search-friendly page setup"]
+    ["WhatsApp / Call Button", 99, "Quick contact CTA"],
+    ["Service Pages", 399, "Extra pages for services"],
+    ["Testimonials Section", 149, "Trust-building reviews"],
+    ["Google Map Embed", 99, "Location section"],
+    ["Lead Form", 199, "Client enquiry form"],
+    ["Basic SEO Setup", 399, "Search-friendly structure"]
   ],
+
   "Landing Page": [
-    ["Strong CTA Sections", 1499, "Conversion-focused buttons"],
-    ["Offer Section", 999, "Pricing or limited-time offer"],
-    ["Lead Form", 999, "Collect customer details"],
-    ["Testimonials", 799, "Social proof"],
-    ["FAQ Section", 699, "Remove customer doubts"],
-    ["WhatsApp CTA", 499, "Direct message flow"]
+    ["Strong CTA Section", 249, "Conversion-focused action block"],
+    ["Offer Section", 199, "Highlight deals or packages"],
+    ["Lead Form", 199, "Collect enquiries"],
+    ["Testimonials", 149, "Social proof section"],
+    ["FAQ Section", 129, "Answer common questions"],
+    ["WhatsApp CTA", 99, "Instant contact button"]
   ],
+
   "Custom Website": [
-    ["Dashboard UI", 4999, "Admin/client dashboard layout"],
-    ["Booking System", 3999, "Appointment or slot booking flow"],
-    ["User Portal", 4999, "Client/user login-style pages"],
-    ["Advanced Animations", 1999, "Premium interactive effects"],
-    ["Custom Forms", 1499, "Special enquiry or data forms"],
-    ["Backend Ready Structure", 2999, "Future backend integration layout"]
+    ["Dashboard UI", 999, "Admin-style interface"],
+    ["Booking System", 799, "Appointments or reservations"],
+    ["User Portal", 1199, "Login-based client area"],
+    ["Premium Animations", 399, "Smooth scroll and hover effects"],
+    ["Custom Forms", 299, "Advanced form fields"],
+    ["Backend Ready Setup", 799, "API/backend structure"]
   ],
+
   "Website Redesign": [
-    ["Hero Redesign", 999, "Modern first impression"],
-    ["Mobile Fixes", 1499, "Responsive layout improvement"],
-    ["CTA Improvement", 999, "Better contact flow"],
-    ["Card Redesign", 1499, "Modern sections and spacing"],
-    ["Speed Cleanup", 999, "Lightweight structure"],
-    ["Trust Sections", 799, "Reviews, process, portfolio"]
+    ["Hero Redesign", 199, "Premium first-screen design"],
+    ["Mobile Optimization", 299, "Better phone/tablet layout"],
+    ["CTA Improvement", 199, "Better conversion buttons"],
+    ["Card Layout Upgrade", 249, "Modern content cards"],
+    ["Speed Cleanup", 249, "Basic performance cleanup"],
+    ["Trust Section", 149, "Badges, reviews, credibility"]
   ],
+
   "Cafe / Restaurant Website": [
-    ["Menu Page", 1499, "Food/drink menu with prices"],
-    ["Gallery Page", 999, "Cafe/restaurant photos"],
-    ["Reservation Form", 1999, "Table booking enquiry"],
-    ["Opening Hours", 499, "Business timings section"],
-    ["Google Map", 499, "Location section"],
-    ["WhatsApp Order CTA", 799, "Direct order/contact button"]
+    ["Menu Page", 299, "Food/drink menu layout"],
+    ["Gallery Section", 199, "Food and interior photos"],
+    ["Reservation Form", 399, "Booking enquiry form"],
+    ["Opening Hours", 99, "Business hours section"],
+    ["Google Map", 99, "Location embed"],
+    ["WhatsApp Order Button", 149, "Quick order CTA"]
   ],
+
   "Real Estate Website": [
-    ["Property Listings", 2999, "Property cards with details"],
-    ["Gallery", 1499, "Property images"],
-    ["Inquiry Form", 999, "Lead collection"],
-    ["Map Location", 499, "Property location"],
-    ["Featured Properties", 1499, "Premium listings"],
-    ["WhatsApp Lead Button", 799, "Direct buyer enquiry"]
+    ["Property Listings", 599, "Listing cards with details"],
+    ["Property Gallery", 299, "Images and showcase"],
+    ["Inquiry Form", 199, "Lead capture form"],
+    ["Google Map", 99, "Area/location embed"],
+    ["Featured Properties", 299, "Premium listing section"],
+    ["WhatsApp Lead Button", 149, "Direct buyer/seller enquiry"]
   ],
+
   "Ecommerce Website": [
-    ["Product Cards", 1999, "Product showcase grid"],
-    ["Cart UI", 2499, "Shopping cart interface"],
-    ["Wishlist", 1499, "Save product option"],
-    ["Category Filters", 999, "Product filtering layout"],
-    ["Checkout UI", 2999, "Order flow design"],
-    ["WhatsApp Order Button", 799, "Direct order enquiry"]
+    ["Product Pages", 499, "Product detail layouts"],
+    ["Cart UI", 599, "Shopping cart interface"],
+    ["Wishlist", 299, "Save products feature"],
+    ["Product Filters", 249, "Category/price filters"],
+    ["Checkout UI", 699, "Checkout page design"],
+    ["WhatsApp Order", 149, "Order through WhatsApp"]
   ]
 };
 
